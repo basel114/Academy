@@ -1,0 +1,10 @@
+import {Link} from "@/i18n/navigation";
+import {SiteHeader} from "@/components/site-header";
+import {createSupabaseServerClient} from "@/lib/supabase/server";
+import {BookOpenText} from "lucide-react";
+
+export default async function BlogIndex({params}:{params:Promise<{locale:"en"|"nl"|"ar"}>}){
+  const{locale}=await params;const supabase=await createSupabaseServerClient();const{data:posts}=await supabase?.from("blog_posts").select("slug,published_at,blog_post_translations(locale,title,excerpt)").eq("is_published",true).order("published_at",{ascending:false})||{data:null};
+  const t={en:{title:"Ideas for learning and family life",lead:"Articles, reflections and useful guidance from our educators.",empty:"No articles have been published yet."},nl:{title:"Ideeën voor leren en gezinsleven",lead:"Artikelen en praktische tips van onze docenten.",empty:"Er zijn nog geen artikelen gepubliceerd."},ar:{title:"أفكار للتعلم والحياة الأسرية",lead:"مقالات وإرشادات مفيدة من معلمينا.",empty:"لم تُنشر مقالات بعد."}}[locale];
+  return <><SiteHeader/><main className="container section"><p className="eyebrow">Samen Learning</p><h1 className="serif mt-3 max-w-4xl text-5xl">{t.title}</h1><p className="quiet mt-4 text-lg">{t.lead}</p>{posts?.length?<div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{posts.map(post=>{const translation=post.blog_post_translations.find(item=>item.locale===locale)||post.blog_post_translations.find(item=>item.locale==="en");return <article className="card p-6" key={post.slug}><BookOpenText className="text-[var(--green)]" size={28}/><h2 className="serif mt-5 text-2xl">{translation?.title||post.slug}</h2><p className="quiet mt-3 line-clamp-4">{translation?.excerpt}</p><p className="quiet mt-5 text-xs">{post.published_at?new Intl.DateTimeFormat(locale,{dateStyle:"medium"}).format(new Date(post.published_at)):""}</p><Link className="pill pill-light mt-5" href={`/blog/${post.slug}`}>{locale==="ar"?"اقرأ المقال":locale==="nl"?"Lees artikel":"Read article"}</Link></article>})}</div>:<p className="quiet mt-9 rounded-2xl bg-white p-6">{t.empty}</p>}</main></>;
+}

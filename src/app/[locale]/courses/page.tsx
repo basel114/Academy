@@ -1,0 +1,15 @@
+import {Link} from "@/i18n/navigation";
+import {SiteHeader} from "@/components/site-header";
+import {courses as demoCourses} from "@/lib/demo";
+import {createSupabaseServerClient} from "@/lib/supabase/server";
+
+export default async function CourseCatalogPage({params}:{params:Promise<{locale:"ar"|"nl"|"en"}>}){
+  const{locale}=await params;const supabase=await createSupabaseServerClient();
+  const{data}=await supabase?.from("courses").select("id,slug,category,level,price_minor,currency,course_type,course_translations(locale,title,description)").eq("is_published",true).order("created_at",{ascending:false})||{data:null};
+  const databaseCourses=(data||[]).map(course=>({id:course.slug,category:course.category,title:course.course_translations.find(item=>item.locale===locale)?.title||course.course_translations.find(item=>item.locale==="en")?.title||"Course",description:course.course_translations.find(item=>item.locale===locale)?.description||course.course_translations.find(item=>item.locale==="en")?.description||"",price:course.price_minor===0?"Free":new Intl.NumberFormat(locale,{style:"currency",currency:course.currency}).format(course.price_minor/100),type:course.course_type,level:course.level}));
+  const isDemo=!supabase||!data?.length;
+  const demo=demoCourses.map(course=>({id:course.id,category:course.category,title:course.title[locale],description:course.description[locale],price:`€${course.price}`,type:"recorded",level:course.level}));
+  const items=databaseCourses.length?databaseCourses:demo;
+  const labels={en:{title:"Courses",lead:"Choose a course for your family's next step.",demo:"Sample courses shown for preview. New courses from the learning team will appear here.",start:"View course"},nl:{title:"Cursussen",lead:"Kies een cursus voor de volgende stap van je gezin.",demo:"Voorbeeldcursussen voor een eerste indruk. Nieuwe cursussen verschijnen hier.",start:"Bekijk cursus"},ar:{title:"الدورات",lead:"اختر دورة تناسب الخطوة القادمة لعائلتك.",demo:"هذه دورات تجريبية للمعاينة. ستظهر هنا الدورات الجديدة التي يضيفها فريق التعلم.",start:"عرض الدورة"}}[locale];
+  return <><SiteHeader/><main className="container section"><p className="eyebrow">Samen Learning</p><h1 className="serif mt-3 text-5xl">{labels.title}</h1><p className="quiet mt-4 text-lg">{labels.lead}</p>{isDemo&&<p className="mt-6 rounded-xl bg-white p-4 text-sm">{labels.demo}</p>}<div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{items.map((course,index)=><article className="card p-5" key={course.id}><div className="mb-5 grid h-40 place-items-center rounded-2xl text-5xl" style={{background:demoCourses[index%demoCourses.length].color}}>{demoCourses[index%demoCourses.length].icon}</div><p className="eyebrow">{course.category.replaceAll("_"," ")} · {course.level}</p><h2 className="serif mt-2 text-2xl">{course.title}</h2><p className="quiet mt-3 line-clamp-3">{course.description}</p><div className="mt-5 flex items-center justify-between"><strong>{course.price}</strong><Link className="pill pill-light" href={`/courses/${course.id}`}>{labels.start}</Link></div></article>)}</div></main></>;
+}
