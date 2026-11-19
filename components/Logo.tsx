@@ -1,0 +1,12 @@
+import Link from "next/link";
+export default function Logo({ variant = "full" }: { variant?: "full" | "icon" }) {
+  return <Link href="/" className="brand" aria-label="Basel Academy" dir="ltr">
+    <svg width="38" height="38" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <rect width="40" height="40" rx="11" fill="#2457e7"/>
+      <path d="M8 13c5-1 9 1 12 4v14c-3-3-7-5-12-4V13Z" fill="#a9bfff"/>
+      <path d="M20 17v14c3-3 7-5 12-4v-6c0-2-2-3-4-3 2-1 3-2 3-4 0-3-3-4-5-3-2 1-4 3-6 6Z" fill="white"/>
+      <path d="m23 22 4-2m-4-3 3-2" stroke="#2457e7" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+    {variant === "full" && <span>Basel <span className="brand-accent">Academy</span></span>}
+  </Link>;
+}

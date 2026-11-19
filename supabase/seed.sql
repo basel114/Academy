@@ -1,23 +1,26 @@
--- Fictional demo catalog. These are public sample records, not real people.
-insert into public.courses(id,slug,category,level,price_minor,currency,is_published) values
- ('10000000-0000-4000-8000-000000000001','arabic-at-home','arabic_for_dutch_speakers','beginner',4900,'EUR',true),
- ('10000000-0000-4000-8000-000000000002','gentle-parenting','parenting_child_development','all',3500,'EUR',true),
- ('10000000-0000-4000-8000-000000000003','dutch-starters','language_learning','beginner',5900,'EUR',true)
-on conflict(slug) do nothing;
-insert into public.course_translations(course_id,locale,title,description)
-select c.id,v.locale,v.title,v.description from (values
- ('arabic-at-home','en','Arabic at home: a joyful beginning','Build a warm daily connection with Arabic, one small moment at a time.'),('arabic-at-home','nl','Arabisch thuis: een vrolijke start','Bouw thuis een warme dagelijkse band op met het Arabisch.'),('arabic-at-home','ar','العربية في البيت: بداية ممتعة','ابنِ صلة يومية دافئة باللغة العربية، خطوة خطوة.'),
- ('gentle-parenting','en','Understanding big feelings','Practical, compassionate tools for meeting your child where they are.'),('gentle-parenting','nl','Grote gevoelens begrijpen','Praktische en liefdevolle hulpmiddelen om aan te sluiten bij je kind.'),('gentle-parenting','ar','فهم المشاعر الكبيرة','أدوات عملية ومتعاطفة لفهم طفلك ومساندته.'),
- ('dutch-starters','en','Dutch for everyday life','Build confidence for the conversations that make a new place feel like home.'),('dutch-starters','nl','Nederlands voor elke dag','Krijg vertrouwen in gesprekken waardoor een nieuwe plek als thuis voelt.'),('dutch-starters','ar','الهولندية للحياة اليومية','اكتسب الثقة في المحادثات التي تجعل المكان الجديد بيتًا.')
-) as v(slug,locale,title,description) join public.courses c on c.slug=v.slug on conflict(course_id,locale) do nothing;
-insert into public.books(id,slug,author,category,price_minor,currency,is_published) values
- ('20000000-0000-4000-8000-000000000001','growing-together','Samen Learning','family-guide',0,'EUR',true),
- ('20000000-0000-4000-8000-000000000002','little-language','M. van Dijk','ebook',800,'EUR',true),
- ('20000000-0000-4000-8000-000000000003','curious-home','A. Hassan','activity-book',1200,'EUR',true)
-on conflict(slug) do nothing;
-insert into public.book_translations(book_id,locale,title,description)
-select b.id,v.locale,v.title,v.description from (values
- ('growing-together','en','Growing Together','A friendly guide to learning as a family.'),('growing-together','nl','Samen groeien','Een warme gids om als gezin te leren.'),('growing-together','ar','ننمو معًا','دليل عائلي للتعلم معًا.'),
- ('little-language','en','Little Words, Big Worlds','Everyday language activities for curious learners.'),('little-language','nl','Kleine woorden, grote werelden','Taalactiviteiten voor nieuwsgierige cursisten.'),('little-language','ar','كلمات صغيرة وعوالم كبيرة','أنشطة لغوية يومية للمتعلمين الفضوليين.'),
- ('curious-home','en','The Curious Home','Simple activities to explore, talk and learn together.'),('curious-home','nl','Het nieuwsgierige huis','Eenvoudige activiteiten om samen te ontdekken en leren.'),('curious-home','ar','البيت الفضولي','أنشطة بسيطة للاستكشاف والتعلم معًا.')
-) as v(slug,locale,title,description) join public.books b on b.slug=v.slug on conflict(book_id,locale) do nothing;
+begin;
+insert into public.categories (id, name, name_ar) values
+  ('ai', 'AI & AI Tools', 'الذكاء الاصطناعي وأدواته'),
+  ('programming', 'Programming', 'البرمجة'),
+  ('web', 'Web Design & Development', 'تصميم وتطوير الويب'),
+  ('graphic', 'Graphic Design', 'التصميم الجرافيكي'),
+  ('english', 'English', 'اللغة الإنجليزية'),
+  ('italian', 'Italian', 'اللغة الإيطالية')
+on conflict (id) do update set name = excluded.name, name_ar = excluded.name_ar;
+
+insert into public.courses (slug, title, title_ar, instructor_name, instructor_name_ar, duration_hours, price, description, description_ar, curriculum, curriculum_ar, category_id, level, cover_image, is_featured) values
+  ('ai-essentials', 'AI Tools for Everyday Work', 'أدوات الذكاء الاصطناعي للعمل اليومي', 'Maya Hassan', 'مايا حسن', 6, 39, 'Build practical AI workflows for research, writing, and planning.', 'ابنِ سير عمل عمليًا للبحث والكتابة والتخطيط.', '["Choosing an AI tool","Writing clear prompts","Verifying outputs","Building a workflow"]', '["اختيار أداة مناسبة","كتابة أوامر واضحة","التحقق من المخرجات","بناء سير عمل"]', 'ai', 'beginner', '/covers/ai.svg', true),
+  ('prompt-design', 'Practical Prompt Design', 'تصميم الأوامر بفعالية', 'Omar Nassar', 'عمر نصار', 8, 49, 'Design, evaluate, and refine reusable prompts for recurring work.', 'صمّم أوامر قابلة لإعادة الاستخدام وقيّمها وحسّنها.', '["Task framing","Examples and context","Structured outputs","Evaluation and iteration"]', '["تحديد المهمة","الأمثلة والسياق","المخرجات المنظمة","التقييم والتحسين"]', 'ai', 'intermediate', '/covers/ai.svg', false),
+  ('python-foundations', 'Python Foundations', 'أساسيات بايثون', 'Adam Saleh', 'آدم صالح', 12, 59, 'Learn Python by building small programs that solve everyday problems.', 'تعلّم بايثون عبر بناء برامج صغيرة تحل مشكلات يومية.', '["Variables and types","Loops and conditions","Functions","Working with files"]', '["المتغيرات والأنواع","الحلقات والشروط","الدوال","التعامل مع الملفات"]', 'programming', 'beginner', '/covers/programming.svg', true),
+  ('typescript-workshop', 'TypeScript in Practice', 'تايب سكريبت عمليًا', 'Nour Adel', 'نور عادل', 10, 69, 'Model application data and catch mistakes earlier with TypeScript.', 'نمذج بيانات التطبيقات واكتشف الأخطاء مبكرًا باستخدام تايب سكريبت.', '["Type narrowing","Interfaces","Generics","Typing an API client"]', '["تضييق الأنواع","الواجهات","الأنواع العامة","تعريف أنواع عميل الواجهة"]', 'programming', 'intermediate', '/covers/programming.svg', false),
+  ('modern-web', 'Modern Web Development', 'تطوير الويب الحديث', 'Lina Karim', 'لينا كريم', 14, 79, 'Build a responsive website from semantic HTML through interactive JavaScript.', 'ابنِ موقعًا متجاوبًا بدءًا من HTML الدلالي وحتى جافاسكريبت التفاعلي.', '["Semantic HTML","Responsive CSS","Browser interactions","Publishing a site"]', '["HTML الدلالي","CSS المتجاوب","التفاعل في المتصفح","نشر موقع"]', 'web', 'beginner', '/covers/web.svg', true),
+  ('figma-web', 'Web Design in Figma', 'تصميم الويب باستخدام فيجما', 'Sara Amin', 'سارة أمين', 9, 55, 'Turn a project brief into a responsive, interactive web prototype.', 'حوّل موجز مشروع إلى نموذج ويب متجاوب وتفاعلي.', '["Page structure","Layout grids","Components","Interactive prototypes"]', '["هيكل الصفحة","شبكات التخطيط","المكوّنات","النماذج التفاعلية"]', 'web', 'intermediate', '/covers/web.svg', false),
+  ('visual-design', 'Visual Design Fundamentals', 'أساسيات التصميم البصري', 'Youssef Ali', 'يوسف علي', 8, 49, 'Use composition, typography, and color to make ideas easier to understand.', 'استخدم التكوين والطباعة والألوان لتوضيح الأفكار.', '["Visual hierarchy","Typography","Color systems","Poster composition"]', '["التسلسل البصري","الطباعة","أنظمة الألوان","تكوين الملصق"]', 'graphic', 'beginner', '/covers/graphic.svg', false),
+  ('brand-identity', 'Design a Brand Identity', 'تصميم هوية علامة تجارية', 'Dina Mostafa', 'دينا مصطفى', 11, 65, 'Create a visual identity and document how to use it across formats.', 'ابتكر هوية بصرية ووثّق استخدامها عبر تنسيقات مختلفة.', '["Discovery","Logo exploration","Brand palette","Style guide"]', '["الاستكشاف","استكشاف الشعار","لوحة الألوان","دليل الأسلوب"]', 'graphic', 'intermediate', '/covers/graphic.svg', false),
+  ('english-conversation', 'Everyday English Conversation', 'المحادثة الإنجليزية اليومية', 'Hannah Reed', 'هانا ريد', 10, 45, 'Practice the English you need for everyday conversations and travel.', 'تدرّب على الإنجليزية اللازمة للمحادثات اليومية والسفر.', '["Introductions","Making plans","Asking for help","Travel conversations"]', '["التعارف","وضع الخطط","طلب المساعدة","محادثات السفر"]', 'english', 'beginner', '/covers/english.svg', false),
+  ('business-english', 'English for the Workplace', 'الإنجليزية في بيئة العمل', 'Daniel Brooks', 'دانيال بروكس', 12, 59, 'Communicate clearly in meetings, presentations, and workplace emails.', 'تواصل بوضوح في الاجتماعات والعروض ورسائل العمل.', '["Professional emails","Running meetings","Presenting updates","Giving feedback"]', '["البريد المهني","إدارة الاجتماعات","عرض المستجدات","تقديم الملاحظات"]', 'english', 'intermediate', '/covers/english.svg', false),
+  ('italian-beginners', 'Italian for Beginners', 'الإيطالية للمبتدئين', 'Giulia Rossi', 'جوليا روسي', 12, 49, 'Start speaking Italian with practical phrases and pronunciation exercises.', 'ابدأ التحدث بالإيطالية بعبارات عملية وتمارين النطق.', '["Sounds and greetings","Numbers and time","Ordering food","Getting around"]', '["الأصوات والتحيات","الأرقام والوقت","طلب الطعام","التنقل"]', 'italian', 'beginner', '/covers/italian.svg', false),
+  ('italian-conversation', 'Conversational Italian', 'المحادثة الإيطالية', 'Marco Bianchi', 'ماركو بيانكي', 14, 65, 'Build confidence discussing familiar topics in natural Italian.', 'اكتسب الثقة في مناقشة موضوعات مألوفة بالإيطالية.', '["Talking about routines","Telling a story","Making suggestions","Discussing interests"]', '["الحديث عن الروتين","سرد قصة","تقديم اقتراحات","مناقشة الاهتمامات"]', 'italian', 'intermediate', '/covers/italian.svg', false)
+on conflict (slug) do update set title = excluded.title, title_ar = excluded.title_ar, instructor_name = excluded.instructor_name, instructor_name_ar = excluded.instructor_name_ar, duration_hours = excluded.duration_hours, price = excluded.price, description = excluded.description, description_ar = excluded.description_ar, curriculum = excluded.curriculum, curriculum_ar = excluded.curriculum_ar, category_id = excluded.category_id, level = excluded.level, cover_image = excluded.cover_image, is_featured = excluded.is_featured;
+
+commit;
