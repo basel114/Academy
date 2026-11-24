@@ -41,5 +41,15 @@ export const lessonsByCourse: Record<string, LessonModule[]> = {
         { id: "2.4", title: "Translate between Arabic and English", title_ar: "الترجمة بين العربية والإنجليزية", thumbnail: `${ai}/2-4.jpg` },
       ],
     },
+    {
+      title: "Module 3: Research and thinking",
+      title_ar: "الوحدة 3: البحث والتفكير",
+      lessons: [
+        { id: "3.1", title: "Research with sources and fact-check", title_ar: "ابحث بالمصادر وتحقّق من المعلومات", thumbnail: `${ai}/3-1.jpg` },
+        { id: "3.2", title: "Brainstorm better ideas", title_ar: "اعصف ذهنيًا بأفكار أفضل", thumbnail: `${ai}/3-2.jpg` },
+        { id: "3.3", title: "Decide with pros and cons", title_ar: "اتخذ قرارك بالمزايا والعيوب", thumbnail: `${ai}/3-3.jpg` },
+        { id: "3.4", title: "Learn any new topic fast", title_ar: "تعلّم أي موضوع جديد بسرعة", thumbnail: `${ai}/3-4.jpg` },
+      ],
+    },
   ],
 };
