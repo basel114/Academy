@@ -120,6 +120,20 @@ input, select { width: 100%; min-height: 46px; border: 1px solid var(--line); bo
 .curriculum ul { margin-top: .8rem; }
 .curriculum li { display: flex; gap: .65rem; align-items: center; padding-block: .65rem; border-bottom: 1px solid var(--line); }
 .curriculum svg { color: var(--link); flex: none; }
+.lessons { margin-top: 2.5rem; }
+.lesson-module { margin-top: 1.25rem; }
+.lesson-module h3 { font-size: 1.05rem; margin-bottom: .75rem; }
+.lesson-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); }
+.lesson { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.lesson img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: var(--wash); }
+.lesson-body { display: flex; flex-direction: column; gap: .45rem; padding: .8rem .9rem 1rem; flex: 1; }
+.lesson-number { color: var(--link); font-size: .8rem; font-weight: 750; font-variant-numeric: tabular-nums; }
+.lesson-body h4 { font-size: .95rem; line-height: 1.35; }
+.lesson-badge { align-self: flex-start; color: var(--success); background: var(--wash); border-radius: 999px; padding: .1rem .6rem; font-size: .78rem; font-weight: 750; }
+.lesson-links { display: flex; flex-wrap: wrap; gap: .35rem 1rem; margin-top: auto; }
+.lesson-links a { display: inline-flex; align-items: center; gap: .35rem; color: var(--link); font-weight: 700; font-size: .87rem; text-decoration: underline; text-underline-offset: .2em; min-height: 32px; }
+.lesson-locked { display: inline-flex; align-items: center; gap: .35rem; margin-top: auto; font-size: .85rem; }
+.lesson-more { margin-top: 1rem; font-size: .93rem; }
 .booking-card { overflow: hidden; }
 .booking-body { padding: 1.2rem; }
 .price { font-size: 1.65rem; line-height: 1.2; }

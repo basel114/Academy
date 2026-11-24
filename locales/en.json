@@ -12,7 +12,7 @@
   "browse": "Explore courses",
   "heroA": "Build skills for",
   "heroB": "what’s next.",
-  "heroDesc": "Explore practical courses in technology, design, and languages. Find something you want to learn and start at your own pace.",
+  "heroDesc": "Practical courses in AI tools and programming. Learn to work smarter with AI, then build your own tools with code.",
   "featured": "Featured courses",
   "featuredDesc": "Start with one of these hands-on courses.",
   "all": "View all courses",
@@ -23,7 +23,7 @@
   "pace": "Learn at your pace",
   "paceDesc": "Choose courses that fit your schedule and experience.",
   "range": "Find your next skill",
-  "rangeDesc": "Explore technology, design, and languages in one place.",
+  "rangeDesc": "Follow one path from AI user to developer: AI tools, prompts, Python, then TypeScript.",
   "catalogDesc": "Find a practical course for the skill you want to build.",
   "search": "Search courses",
   "filter": "Filter by category",
@@ -75,5 +75,11 @@
   "forgotDesc": "Enter your account email to receive a reset link.",
   "browseMy": "Browse courses",
   "noAccount": "New to Basel Academy?",
-  "haveAccount": "Already have an account?"
+  "haveAccount": "Already have an account?",
+  "lessonsTitle": "Lessons",
+  "freePreview": "Free preview",
+  "slidesPdf": "Slides (PDF)",
+  "worksheetPdf": "Worksheet (PDF)",
+  "includedWithBooking": "Included when you book",
+  "moreModules": "More modules are on the way."
 }

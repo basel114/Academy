@@ -9,26 +9,6 @@
       "id": "programming",
       "name": "Programming",
       "name_ar": "البرمجة"
-    },
-    {
-      "id": "web",
-      "name": "Web Design & Development",
-      "name_ar": "تصميم وتطوير الويب"
-    },
-    {
-      "id": "graphic",
-      "name": "Graphic Design",
-      "name_ar": "التصميم الجرافيكي"
-    },
-    {
-      "id": "english",
-      "name": "English",
-      "name_ar": "اللغة الإنجليزية"
-    },
-    {
-      "id": "italian",
-      "name": "Italian",
-      "name_ar": "اللغة الإيطالية"
     }
   ],
   "courses": [
@@ -36,324 +16,120 @@
       "slug": "ai-essentials",
       "title": "AI Tools for Everyday Work",
       "title_ar": "أدوات الذكاء الاصطناعي للعمل اليومي",
-      "instructor_name": "Maya Hassan",
-      "instructor_name_ar": "مايا حسن",
+      "instructor_name": "Basel",
+      "instructor_name_ar": "باسل",
       "duration_hours": 6,
       "price": 39,
-      "description": "Build practical AI workflows for research, writing, and planning.",
-      "description_ar": "ابنِ سير عمل عمليًا للبحث والكتابة والتخطيط.",
+      "description": "Use AI assistants like ChatGPT, Claude and Gemini to write faster, research smarter, handle documents and data, and create visuals. No technical background needed.",
+      "description_ar": "استخدم مساعدات الذكاء الاصطناعي مثل ChatGPT أو Claude أو Gemini لتكتب أسرع وتبحث بذكاء أكبر وتتعامل مع المستندات والبيانات وتصنع الصور، دون الحاجة إلى أي خلفية تقنية.",
       "curriculum": [
-        "Choosing an AI tool",
-        "Writing clear prompts",
-        "Verifying outputs",
-        "Building a workflow"
+        "Module 1: Getting started with AI assistants",
+        "Module 2: Writing and communication",
+        "Module 3: Research and thinking",
+        "Module 4: Documents, spreadsheets and data",
+        "Module 5: Visuals and media",
+        "Module 6: Build your own AI workflow"
       ],
       "curriculum_ar": [
-        "اختيار أداة مناسبة",
-        "كتابة أوامر واضحة",
-        "التحقق من المخرجات",
-        "بناء سير عمل"
+        "الوحدة 1: البداية مع مساعدات الذكاء الاصطناعي",
+        "الوحدة 2: الكتابة والتواصل",
+        "الوحدة 3: البحث والتفكير",
+        "الوحدة 4: المستندات والجداول والبيانات",
+        "الوحدة 5: الصور والوسائط",
+        "الوحدة 6: ابنِ سير عملك الخاص بالذكاء الاصطناعي"
       ],
       "category_id": "ai",
       "level": "beginner",
-      "cover_image": "/covers/ai.svg",
+      "cover_image": "/covers/ai-essentials.jpg",
       "is_featured": true
     },
     {
       "slug": "prompt-design",
       "title": "Practical Prompt Design",
       "title_ar": "تصميم الأوامر بفعالية",
-      "instructor_name": "Omar Nassar",
-      "instructor_name_ar": "عمر نصار",
+      "instructor_name": "Basel",
+      "instructor_name_ar": "باسل",
       "duration_hours": 8,
       "price": 49,
-      "description": "Design, evaluate, and refine reusable prompts for recurring work.",
-      "description_ar": "صمّم أوامر قابلة لإعادة الاستخدام وقيّمها وحسّنها.",
+      "description": "Write structured, reusable prompts that give consistent results, and build a tested prompt library for your own work.",
+      "description_ar": "اكتب أوامر منظّمة قابلة لإعادة الاستخدام تعطيك نتائج ثابتة، وابنِ مكتبة أوامر مجرّبة لعملك.",
       "curriculum": [
         "Task framing",
         "Examples and context",
         "Structured outputs",
-        "Evaluation and iteration"
+        "Evaluation and iteration",
+        "Final project: a tested library of 15 prompts"
       ],
       "curriculum_ar": [
         "تحديد المهمة",
         "الأمثلة والسياق",
         "المخرجات المنظمة",
-        "التقييم والتحسين"
+        "التقييم والتحسين",
+        "المشروع النهائي: مكتبة من 15 أمرًا مجرّبًا"
       ],
       "category_id": "ai",
       "level": "intermediate",
-      "cover_image": "/covers/ai.svg",
-      "is_featured": false
+      "cover_image": "/covers/prompt-design.jpg",
+      "is_featured": true
     },
     {
       "slug": "python-foundations",
       "title": "Python Foundations",
       "title_ar": "أساسيات بايثون",
-      "instructor_name": "Adam Saleh",
-      "instructor_name_ar": "آدم صالح",
+      "instructor_name": "Basel",
+      "instructor_name_ar": "باسل",
       "duration_hours": 12,
       "price": 59,
-      "description": "Learn Python by building small programs that solve everyday problems.",
-      "description_ar": "تعلّم بايثون عبر بناء برامج صغيرة تحل مشكلات يومية.",
+      "description": "Start from zero and write real Python scripts: variables, loops, functions, files and APIs.",
+      "description_ar": "ابدأ من الصفر واكتب سكربتات بايثون حقيقية: المتغيرات والحلقات والدوال والملفات وواجهات API.",
       "curriculum": [
         "Variables and types",
         "Loops and conditions",
         "Functions",
-        "Working with files"
+        "Working with files",
+        "Calling a public API",
+        "Final project: a script that organizes your files"
       ],
       "curriculum_ar": [
         "المتغيرات والأنواع",
         "الحلقات والشروط",
         "الدوال",
-        "التعامل مع الملفات"
+        "التعامل مع الملفات",
+        "استدعاء واجهة API عامة",
+        "المشروع النهائي: سكربت يرتّب ملفاتك تلقائيًا"
       ],
       "category_id": "programming",
       "level": "beginner",
-      "cover_image": "/covers/programming.svg",
+      "cover_image": "/covers/python-foundations.jpg",
       "is_featured": true
     },
     {
       "slug": "typescript-workshop",
       "title": "TypeScript in Practice",
       "title_ar": "تايب سكريبت عمليًا",
-      "instructor_name": "Nour Adel",
-      "instructor_name_ar": "نور عادل",
+      "instructor_name": "Basel",
+      "instructor_name_ar": "باسل",
       "duration_hours": 10,
       "price": 69,
-      "description": "Model application data and catch mistakes earlier with TypeScript.",
-      "description_ar": "نمذج بيانات التطبيقات واكتشف الأخطاء مبكرًا باستخدام تايب سكريبت.",
+      "description": "Build type-safe apps with TypeScript in real projects and catch bugs before your users do.",
+      "description_ar": "ابنِ تطبيقات آمنة الأنواع بتايب سكريبت في مشاريع حقيقية، واكتشف الأخطاء قبل أن يصل إليها المستخدمون.",
       "curriculum": [
         "Type narrowing",
         "Interfaces",
         "Generics",
-        "Typing an API client"
+        "Typing an API client",
+        "Final project: a typed to-do web app"
       ],
       "curriculum_ar": [
         "تضييق الأنواع",
         "الواجهات",
         "الأنواع العامة",
-        "تعريف أنواع عميل الواجهة"
+        "تعريف أنواع عميل الواجهة",
+        "المشروع النهائي: تطبيق مهام مكتوب بتايب سكريبت"
       ],
       "category_id": "programming",
       "level": "intermediate",
-      "cover_image": "/covers/programming.svg",
-      "is_featured": false
-    },
-    {
-      "slug": "modern-web",
-      "title": "Modern Web Development",
-      "title_ar": "تطوير الويب الحديث",
-      "instructor_name": "Lina Karim",
-      "instructor_name_ar": "لينا كريم",
-      "duration_hours": 14,
-      "price": 79,
-      "description": "Build a responsive website from semantic HTML through interactive JavaScript.",
-      "description_ar": "ابنِ موقعًا متجاوبًا بدءًا من HTML الدلالي وحتى جافاسكريبت التفاعلي.",
-      "curriculum": [
-        "Semantic HTML",
-        "Responsive CSS",
-        "Browser interactions",
-        "Publishing a site"
-      ],
-      "curriculum_ar": [
-        "HTML الدلالي",
-        "CSS المتجاوب",
-        "التفاعل في المتصفح",
-        "نشر موقع"
-      ],
-      "category_id": "web",
-      "level": "beginner",
-      "cover_image": "/covers/web.svg",
-      "is_featured": true
-    },
-    {
-      "slug": "figma-web",
-      "title": "Web Design in Figma",
-      "title_ar": "تصميم الويب باستخدام فيجما",
-      "instructor_name": "Sara Amin",
-      "instructor_name_ar": "سارة أمين",
-      "duration_hours": 9,
-      "price": 55,
-      "description": "Turn a project brief into a responsive, interactive web prototype.",
-      "description_ar": "حوّل موجز مشروع إلى نموذج ويب متجاوب وتفاعلي.",
-      "curriculum": [
-        "Page structure",
-        "Layout grids",
-        "Components",
-        "Interactive prototypes"
-      ],
-      "curriculum_ar": [
-        "هيكل الصفحة",
-        "شبكات التخطيط",
-        "المكوّنات",
-        "النماذج التفاعلية"
-      ],
-      "category_id": "web",
-      "level": "intermediate",
-      "cover_image": "/covers/web.svg",
-      "is_featured": false
-    },
-    {
-      "slug": "visual-design",
-      "title": "Visual Design Fundamentals",
-      "title_ar": "أساسيات التصميم البصري",
-      "instructor_name": "Youssef Ali",
-      "instructor_name_ar": "يوسف علي",
-      "duration_hours": 8,
-      "price": 49,
-      "description": "Use composition, typography, and color to make ideas easier to understand.",
-      "description_ar": "استخدم التكوين والطباعة والألوان لتوضيح الأفكار.",
-      "curriculum": [
-        "Visual hierarchy",
-        "Typography",
-        "Color systems",
-        "Poster composition"
-      ],
-      "curriculum_ar": [
-        "التسلسل البصري",
-        "الطباعة",
-        "أنظمة الألوان",
-        "تكوين الملصق"
-      ],
-      "category_id": "graphic",
-      "level": "beginner",
-      "cover_image": "/covers/graphic.svg",
-      "is_featured": false
-    },
-    {
-      "slug": "brand-identity",
-      "title": "Design a Brand Identity",
-      "title_ar": "تصميم هوية علامة تجارية",
-      "instructor_name": "Dina Mostafa",
-      "instructor_name_ar": "دينا مصطفى",
-      "duration_hours": 11,
-      "price": 65,
-      "description": "Create a visual identity and document how to use it across formats.",
-      "description_ar": "ابتكر هوية بصرية ووثّق استخدامها عبر تنسيقات مختلفة.",
-      "curriculum": [
-        "Discovery",
-        "Logo exploration",
-        "Brand palette",
-        "Style guide"
-      ],
-      "curriculum_ar": [
-        "الاستكشاف",
-        "استكشاف الشعار",
-        "لوحة الألوان",
-        "دليل الأسلوب"
-      ],
-      "category_id": "graphic",
-      "level": "intermediate",
-      "cover_image": "/covers/graphic.svg",
-      "is_featured": false
-    },
-    {
-      "slug": "english-conversation",
-      "title": "Everyday English Conversation",
-      "title_ar": "المحادثة الإنجليزية اليومية",
-      "instructor_name": "Hannah Reed",
-      "instructor_name_ar": "هانا ريد",
-      "duration_hours": 10,
-      "price": 45,
-      "description": "Practice the English you need for everyday conversations and travel.",
-      "description_ar": "تدرّب على الإنجليزية اللازمة للمحادثات اليومية والسفر.",
-      "curriculum": [
-        "Introductions",
-        "Making plans",
-        "Asking for help",
-        "Travel conversations"
-      ],
-      "curriculum_ar": [
-        "التعارف",
-        "وضع الخطط",
-        "طلب المساعدة",
-        "محادثات السفر"
-      ],
-      "category_id": "english",
-      "level": "beginner",
-      "cover_image": "/covers/english.svg",
-      "is_featured": false
-    },
-    {
-      "slug": "business-english",
-      "title": "English for the Workplace",
-      "title_ar": "الإنجليزية في بيئة العمل",
-      "instructor_name": "Daniel Brooks",
-      "instructor_name_ar": "دانيال بروكس",
-      "duration_hours": 12,
-      "price": 59,
-      "description": "Communicate clearly in meetings, presentations, and workplace emails.",
-      "description_ar": "تواصل بوضوح في الاجتماعات والعروض ورسائل العمل.",
-      "curriculum": [
-        "Professional emails",
-        "Running meetings",
-        "Presenting updates",
-        "Giving feedback"
-      ],
-      "curriculum_ar": [
-        "البريد المهني",
-        "إدارة الاجتماعات",
-        "عرض المستجدات",
-        "تقديم الملاحظات"
-      ],
-      "category_id": "english",
-      "level": "intermediate",
-      "cover_image": "/covers/english.svg",
-      "is_featured": false
-    },
-    {
-      "slug": "italian-beginners",
-      "title": "Italian for Beginners",
-      "title_ar": "الإيطالية للمبتدئين",
-      "instructor_name": "Giulia Rossi",
-      "instructor_name_ar": "جوليا روسي",
-      "duration_hours": 12,
-      "price": 49,
-      "description": "Start speaking Italian with practical phrases and pronunciation exercises.",
-      "description_ar": "ابدأ التحدث بالإيطالية بعبارات عملية وتمارين النطق.",
-      "curriculum": [
-        "Sounds and greetings",
-        "Numbers and time",
-        "Ordering food",
-        "Getting around"
-      ],
-      "curriculum_ar": [
-        "الأصوات والتحيات",
-        "الأرقام والوقت",
-        "طلب الطعام",
-        "التنقل"
-      ],
-      "category_id": "italian",
-      "level": "beginner",
-      "cover_image": "/covers/italian.svg",
-      "is_featured": false
-    },
-    {
-      "slug": "italian-conversation",
-      "title": "Conversational Italian",
-      "title_ar": "المحادثة الإيطالية",
-      "instructor_name": "Marco Bianchi",
-      "instructor_name_ar": "ماركو بيانكي",
-      "duration_hours": 14,
-      "price": 65,
-      "description": "Build confidence discussing familiar topics in natural Italian.",
-      "description_ar": "اكتسب الثقة في مناقشة موضوعات مألوفة بالإيطالية.",
-      "curriculum": [
-        "Talking about routines",
-        "Telling a story",
-        "Making suggestions",
-        "Discussing interests"
-      ],
-      "curriculum_ar": [
-        "الحديث عن الروتين",
-        "سرد قصة",
-        "تقديم اقتراحات",
-        "مناقشة الاهتمامات"
-      ],
-      "category_id": "italian",
-      "level": "intermediate",
-      "cover_image": "/covers/italian.svg",
+      "cover_image": "/covers/typescript-workshop.jpg",
       "is_featured": false
     }
   ]
