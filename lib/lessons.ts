@@ -51,5 +51,15 @@ export const lessonsByCourse: Record<string, LessonModule[]> = {
         { id: "3.4", title: "Learn any new topic fast", title_ar: "تعلّم أي موضوع جديد بسرعة", thumbnail: `${ai}/3-4.jpg` },
       ],
     },
+    {
+      title: "Module 4: Documents, spreadsheets and data",
+      title_ar: "الوحدة 4: المستندات والجداول والبيانات",
+      lessons: [
+        { id: "4.1", title: "AI inside Google Docs and Word", title_ar: "الذكاء الاصطناعي داخل Google Docs أو Word", thumbnail: `${ai}/4-1.jpg` },
+        { id: "4.2", title: "Spreadsheet formulas with AI", title_ar: "معادلات الجداول بمساعدة الذكاء الاصطناعي", thumbnail: `${ai}/4-2.jpg` },
+        { id: "4.3", title: "Analyze a CSV file", title_ar: "حلّل ملف CSV", thumbnail: `${ai}/4-3.jpg` },
+        { id: "4.4", title: "From outline to presentation", title_ar: "من المخطط إلى العرض التقديمي", thumbnail: `${ai}/4-4.jpg` },
+      ],
+    },
   ],
 };
