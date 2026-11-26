@@ -61,5 +61,15 @@ export const lessonsByCourse: Record<string, LessonModule[]> = {
         { id: "4.4", title: "From outline to presentation", title_ar: "من المخطط إلى العرض التقديمي", thumbnail: `${ai}/4-4.jpg` },
       ],
     },
+    {
+      title: "Module 5: Visuals and media",
+      title_ar: "الوحدة 5: الصور والوسائط",
+      lessons: [
+        { id: "5.1", title: "Create images from a text prompt", title_ar: "أنشئ صورًا من وصف نصي", thumbnail: `${ai}/5-1.jpg` },
+        { id: "5.2", title: "Edit and improve photos with AI", title_ar: "عدّل صورك وحسّنها بالذكاء الاصطناعي", thumbnail: `${ai}/5-2.jpg` },
+        { id: "5.3", title: "Turn audio and video into text", title_ar: "حوّل الصوت والفيديو إلى نص", thumbnail: `${ai}/5-3.jpg` },
+        { id: "5.4", title: "Use AI media safely and fairly", title_ar: "استخدم وسائط الذكاء الاصطناعي بأمان وإنصاف", thumbnail: `${ai}/5-4.jpg` },
+      ],
+    },
   ],
 };
